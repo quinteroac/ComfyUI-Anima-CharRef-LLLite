@@ -4,10 +4,10 @@ Use the [Anima Reference Adapter](https://github.com/ElectronGirl/ComfyUI-Anima-
 reference) together with [Anima ControlNet-LLLite](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite)
 control models (3D pose, regional layout) in the same generation.
 
-[![Intro video: three original idols, 3D pose and regional control](docs/intro_thumbnail.jpg)](https://github.com/quinteroac/ComfyUI-Anima-CharRef-LLLite/releases/tag/v0.1.0)
+[![Intro video: three original idols, 3D pose and regional control](docs/intro_thumbnail.jpg)](https://youtu.be/7-hBcmFqyuE)
 
-*Intro video (73 s): click the image to watch it on the release page. Every image in it was made with these nodes
-and Anima Turbo.*
+*Intro video (73 s): click the image to watch it on [YouTube](https://youtu.be/7-hBcmFqyuE). Every image in it was
+made with these nodes and Anima Turbo.*
 
 ## Examples
 
