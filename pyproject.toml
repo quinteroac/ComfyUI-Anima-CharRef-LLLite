@@ -1,0 +1,9 @@
+[project]
+name = "comfyui-anima-charref-lllite"
+version = "0.1.0"
+description = "Use the Anima Reference Adapter together with Anima ControlNet-LLLite (3D pose, regional) in ComfyUI."
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/quinteroac/ComfyUI-Anima-CharRef-LLLite"
