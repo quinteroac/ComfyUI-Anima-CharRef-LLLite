@@ -4,6 +4,11 @@ Use the [Anima Reference Adapter](https://github.com/ElectronGirl/ComfyUI-Anima-
 reference) together with [Anima ControlNet-LLLite](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite)
 control models (3D pose, regional layout) in the same generation.
 
+[![Intro video: three original idols, 3D pose and regional control](docs/intro_thumbnail.jpg)](https://github.com/quinteroac/ComfyUI-Anima-CharRef-LLLite/releases/tag/v0.1.0)
+
+*Intro video (73 s): click the image to watch it on the release page. Every image in it was made with these nodes
+and Anima Turbo.*
+
 The Ref Adapter adds the reference as an extra frame next to the image being generated. ComfyUI's stock
 LLLite patch expects only the generated image's tokens, so the two do not combine out of the box. These nodes
 run the Ref Adapter forward with the model patches applied and keep the LLLite control on the generated
