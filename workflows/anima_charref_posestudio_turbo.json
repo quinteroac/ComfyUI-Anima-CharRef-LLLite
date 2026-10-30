@@ -1,8 +1,8 @@
 {
   "id": "5bdb7644-d850-4012-86c8-07dfa99ed3d0",
   "revision": 0,
-  "last_node_id": 67,
-  "last_link_id": 53,
+  "last_node_id": 68,
+  "last_link_id": 55,
   "nodes": [
     {
       "id": 1,
@@ -44,7 +44,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            1
+            54
           ]
         }
       ],
@@ -111,8 +111,7 @@
           "name": "CLIP",
           "type": "CLIP",
           "links": [
-            10,
-            11
+            55
           ]
         }
       ],
@@ -181,7 +180,7 @@
       "type": "ExperimentalAnimaRefAdapterControlsLoader",
       "pos": [
         -2868,
-        290
+        490
       ],
       "size": [
         552,
@@ -255,7 +254,7 @@
       "type": "ModelComputeDtype",
       "pos": [
         -2868,
-        470
+        670
       ],
       "size": [
         552,
@@ -979,7 +978,7 @@
       "type": "AnimaSafePAG",
       "pos": [
         -2868,
-        690
+        890
       ],
       "size": [
         552,
@@ -1108,7 +1107,7 @@
       "type": "ModelAttentionBackend",
       "pos": [
         -2868,
-        580
+        780
       ],
       "size": [
         552,
@@ -1702,7 +1701,7 @@
         "Node name for S&R": "MarkdownNote"
       },
       "widgets_values": [
-        "## Anima Turbo + Character Ref + LLLite 3D pose\n\n## Models (folders under `ComfyUI/models/`)\n\n### Anima (Turbo)\n- **diffusion_models/anima/** `anima-turbo-v1.0-int8-convrot.safetensors` — local INT8 conversion of\n  [anima-turbo-v1.0.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/diffusion_models/anima-turbo-v1.0.safetensors).\n  You can load the official bf16 file directly instead (pick it in *Base model*).\n- **text_encoders/** [qwen_3_06b_base.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/text_encoders/qwen_3_06b_base.safetensors)\n- **vae/** [qwen_image_vae.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/vae/qwen_image_vae.safetensors)\n\n### Character reference\n- **loras/** [anima_ref_adapter_v2_r64.safetensors](https://huggingface.co/ElectronGirl/anima-ref-adapter/blob/main/anima_ref_adapter_v2_r64.safetensors)\n  (or [anima_ref_adapter_pilot_r32.safetensors](https://huggingface.co/ElectronGirl/anima-ref-adapter/blob/main/anima_ref_adapter_pilot_r32.safetensors))\n\n### Pose control (LLLite)\n- **model_patches/** [anima_3dpose_6200.safetensors](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite/blob/main/anima_3dpose_6200.safetensors)\n\n## Custom nodes\n\n- [ComfyUI-Anima-Ref-Adapter](https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter) — Ref Latent, Ref Guider\n- [comfyui-anima-safe-pag](https://github.com/iljung1106/comfyui-anima-safe-pag) — Anima Safe PAG\n- [comfyui-anima-style-nodes](https://github.com/fulletLab/comfyui-anima-style-nodes) — Anima Style Explorer\n- [ComfyUI-Pixaroma](https://github.com/pixaroma/ComfyUI-Pixaroma) — groups, switches, sliders, seed, resolution, load image\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy) — Any Switch, Image Comparer\n- [ComfyUI_VNCCS_Utils](https://github.com/AHEKOT/ComfyUI_VNCCS_Utils) — Pose Studio\n- [ComfyUI-Anima-CharRef-LLLite](https://github.com/quinteroac/ComfyUI-Anima-CharRef-LLLite) — Ref Adapter + Controls loader,\n  LLLite + Character Ref (needs ComfyUI-Anima-Ref-Adapter)\n\nInstall custom nodes with ComfyUI-Manager (*Install Missing Custom Nodes*) or\n`git clone <url>` inside `custom_nodes/`, then restart ComfyUI.\n\n**Defaults**: 8 steps euler/simple, CFG 1, REF guidance 1, Safe PAG 1.3 (block 18).\nThe LLLite control models were trained on Anima Base; with Turbo they are experimental.\n\nLayout based on the Krea 2 Pose Studio workflow by [foxfuressence](https://www.youtube.com/@foxfuressence)."
+        "## Anima Turbo + Character Ref + LLLite 3D pose\n\n## Models (folders under `ComfyUI/models/`)\n\n### Anima (Turbo)\n- **diffusion_models/anima/** `anima-turbo-v1.0-int8-convrot.safetensors` — local INT8 conversion of\n  [anima-turbo-v1.0.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/diffusion_models/anima-turbo-v1.0.safetensors).\n  You can load the official bf16 file directly instead (pick it in *Base model*).\n- **text_encoders/** [qwen_3_06b_base.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/text_encoders/qwen_3_06b_base.safetensors)\n- **vae/** [qwen_image_vae.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/vae/qwen_image_vae.safetensors)\n\n### Character reference\n- **loras/** [anima_ref_adapter_v2_r64.safetensors](https://huggingface.co/ElectronGirl/anima-ref-adapter/blob/main/anima_ref_adapter_v2_r64.safetensors)\n  (or [anima_ref_adapter_pilot_r32.safetensors](https://huggingface.co/ElectronGirl/anima-ref-adapter/blob/main/anima_ref_adapter_pilot_r32.safetensors))\n\n### Pose control (LLLite)\n- **model_patches/** [anima_3dpose_6200.safetensors](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite/blob/main/anima_3dpose_6200.safetensors)\n\n## Custom nodes\n\n- [ComfyUI-Anima-Ref-Adapter](https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter) — Ref Latent, Ref Guider\n- [comfyui-anima-safe-pag](https://github.com/iljung1106/comfyui-anima-safe-pag) — Anima Safe PAG\n- [comfyui-anima-style-nodes](https://github.com/fulletLab/comfyui-anima-style-nodes) — Anima Style Explorer\n- [ComfyUI-Pixaroma](https://github.com/pixaroma/ComfyUI-Pixaroma) — groups, switches, sliders, seed, resolution, load image\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy) — Any Switch, Image Comparer, Power Lora Loader (custom Anima LoRAs, empty by default)\n- [ComfyUI_VNCCS_Utils](https://github.com/AHEKOT/ComfyUI_VNCCS_Utils) — Pose Studio\n- [ComfyUI-Anima-CharRef-LLLite](https://github.com/quinteroac/ComfyUI-Anima-CharRef-LLLite) — Ref Adapter + Controls loader,\n  LLLite + Character Ref (needs ComfyUI-Anima-Ref-Adapter)\n\nInstall custom nodes with ComfyUI-Manager (*Install Missing Custom Nodes*) or\n`git clone <url>` inside `custom_nodes/`, then restart ComfyUI.\n\n**Defaults**: 8 steps euler/simple, CFG 1, REF guidance 1, Safe PAG 1.3 (block 18).\nThe LLLite control models were trained on Anima Base; with Turbo they are experimental.\n\nLayout based on the Krea 2 Pose Studio workflow by [foxfuressence](https://www.youtube.com/@foxfuressence)."
       ],
       "widgets_values_named": {
         "text": "## Experimental: Turbo + Character Ref + LLLite 3D pose\n\nAnima Turbo INT8, bf16, 8 pasos, CFG 1 y reference guidance 1.\nRef Adapter strength 1; LLLite strength 1, activo de 0 a 1.\nPrompt inicial: 1girl. Semilla fija tomada de la última ejecución.\n\nPose Studio → render RGB sombreado sobre NEGRO → tamaño de salida → LLLite.\nEl maniquí coloreado aporta volumen, solapamientos y dedos; no usar esqueleto DWPose.\nLa referencia de personaje permanece separada y su frame no recibe LLLite.\nMantén el navegador abierto y carga esta copia para aplicar los ajustes de Pose Studio.\n\nSe reutiliza ModelPatchLoader y LLLite nativo con un adaptador para el frame de referencia.\nPesos: models/model_patches/anima_3dpose_6200.safetensors.\nTurbo + Ref Adapter es una combinación experimental; el modelo de control se entrenó en Anima Base.\nhttps://huggingface.co/toyxyz/Anima_ControlNet-LLLite\n"
@@ -2527,12 +2526,76 @@
       ],
       "color": "#4a4a4e",
       "bgcolor": "#2a2a2a"
+    },
+    {
+      "id": 68,
+      "type": "Power Lora Loader (rgthree)",
+      "title": "LoRAs (Anima)",
+      "pos": [
+        -2868,
+        290
+      ],
+      "size": [
+        552,
+        150
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 54
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": 55
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [
+            1
+          ]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": [
+            10,
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "Show Strengths": "Single Strength",
+        "Match": ""
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {},
+        ""
+      ]
     }
   ],
   "links": [
     [
       1,
-      1,
+      68,
       0,
       42,
       0,
@@ -2604,16 +2667,16 @@
     ],
     [
       10,
-      2,
-      0,
+      68,
+      1,
       9,
       0,
       "CLIP"
     ],
     [
       11,
-      2,
-      0,
+      68,
+      1,
       10,
       0,
       "CLIP"
@@ -2905,6 +2968,22 @@
       31,
       3,
       "INT"
+    ],
+    [
+      54,
+      1,
+      0,
+      68,
+      0,
+      "MODEL"
+    ],
+    [
+      55,
+      2,
+      0,
+      68,
+      1,
+      "CLIP"
     ]
   ],
   "groups": [],
