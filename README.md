@@ -47,6 +47,14 @@ All in *Anima Ref Adapter/experimental*.
 Chain: `UNETLoader → Anima LLLite + Character Ref → Anima Ref Adapter + Controls → …`, then *Anima Ref Latent*
 and *Anima Ref Guider* from the Ref Adapter as usual.
 
+### SnapRef
+
+[SnapRef](https://huggingface.co/0ppxnhximxr/snapref-v1b) runs inside ComfyUI's own blocks, so the core
+*AnimaLLLiteApply* node already acts on the generated image only; no node from this pack is needed.
+
+Chain: `UNETLoader → AnimaLLLiteApply → SnapRef → … → CFGGuider`. Anima Safe PAG does not work with SnapRef's
+`ref_guidance_on` (token-count mismatch).
+
 ## Install
 
 Requires [ComfyUI-Anima-Ref-Adapter](https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter) and a ComfyUI
@@ -70,8 +78,10 @@ In [`workflows/`](workflows). Each one has a note with every model and custom no
 | `anima_charref_posestudio_turbo.json` | Character reference + 3D pose from Pose Studio. Optional pose import (SAM3D) from another image or from the character reference itself, and output size taken from the Pose Studio render. |
 | `anima_charref_posestudio_moss_upscale.json` | The same, plus an optional 2nd pass / hi-res fix with MOSS-Image up to 5 MP. |
 | `anima_charref_regional_paint_turbo.json` | 1 to 3 character references stitched side by side + a regional map painted in Pixaroma Paint. |
+| `anima_snapref_*.json` | The same three with SnapRef v1b instead of the Ref Adapter (core LLLite node, CFGGuider, no Safe PAG: in an A/B test it doubled the time for little gain). *CHARACTER strength* is SnapRef's `strength` (log scale, 0 as trained); *REF guidance* acts only with `ref_guidance_on`. |
+| `anima_charref_snapref_*.json` | The same three with both methods: the *Character ref method* switch turns on the Ref Adapter group or the SnapRef group (one at a time; SnapRef by default). One core LLLite node serves both; use the Ref Adapter v2 LoRA (the pilot v1 needs the experimental LLLite node). Safe PAG sits in the Ref Adapter group. |
 
-All of them use Anima Turbo (8 steps, CFG 1), Anima Safe PAG and Anima Style Explorer for the prompt; all but
+All of them use Anima Turbo (8 steps, CFG 1), Anima Safe PAG (except SnapRef) and Anima Style Explorer for the prompt; all but
 the simple one add Pixaroma groups with on/off switches. The example images and the regional paint layers are not included: load your
 own references and paint the regions in the Paint editor.
 
