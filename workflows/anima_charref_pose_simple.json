@@ -1,8 +1,8 @@
 {
   "id": "0591a48a-599c-48a7-86a0-86aa182f2856",
   "revision": 0,
-  "last_node_id": 103,
-  "last_link_id": 30,
+  "last_node_id": 104,
+  "last_link_id": 32,
   "nodes": [
     {
       "id": 1,
@@ -44,7 +44,7 @@
           "name": "MODEL",
           "type": "MODEL",
           "links": [
-            1
+            31
           ]
         }
       ],
@@ -107,8 +107,7 @@
           "name": "CLIP",
           "type": "CLIP",
           "links": [
-            16,
-            17
+            32
           ]
         }
       ],
@@ -171,7 +170,7 @@
       "type": "ModelPatchLoader",
       "pos": [
         40,
-        470
+        660
       ],
       "size": [
         320,
@@ -1526,7 +1525,7 @@
       "type": "MarkdownNote",
       "pos": [
         20,
-        600
+        780
       ],
       "size": [
         360,
@@ -1542,16 +1541,80 @@
       },
       "title": "How to use",
       "widgets_values": [
-        "## Anima Turbo + Character Ref + 3D pose (simple)\n\nColumns from left to right: models → model patches → pose → character → prompt → sampling → output.\n\n**Pose**: load a shaded 3D body mesh rendered on **black** (Pose Studio, Blender, Daz, any 3D posing app,\nor the [sample](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite/blob/main/example_workflow/3dpose_example.png)).\nOpenPose skeletons, depth maps or lineart do not work with this control model.\nThe output size follows the pose image (~1 MP).\n\n**No pose**: select *LLLite 3D pose* and bypass it (Ctrl+B).\n\n**Prompt**: scene and pose tags only; the reference gives the character. Use `1girl` / `1boy`.\n\n**Defaults**: 8 steps euler/simple, CFG 1, REF guidance 1, Safe PAG 1.3. LLLite strength 1, 0 → 1;\nend it earlier (0.6-0.8) if the pose is too rigid.\n\n## Downloads (folders under `ComfyUI/models/`)\n\n- **diffusion_models/** [anima-turbo-v1.0.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/diffusion_models/anima-turbo-v1.0.safetensors)\n  (this workflow loads a local INT8 conversion; pick the file you have)\n- **text_encoders/** [qwen_3_06b_base.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/text_encoders/qwen_3_06b_base.safetensors)\n- **vae/** [qwen_image_vae.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/vae/qwen_image_vae.safetensors)\n- **loras/** [anima_ref_adapter_v2_r64.safetensors](https://huggingface.co/ElectronGirl/anima-ref-adapter/blob/main/anima_ref_adapter_v2_r64.safetensors)\n- **model_patches/** [anima_3dpose_6200.safetensors](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite/blob/main/anima_3dpose_6200.safetensors)\n\n## Custom nodes\n\n- [ComfyUI-Anima-Ref-Adapter](https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter)\n- [ComfyUI-Anima-CharRef-LLLite](https://github.com/quinteroac/ComfyUI-Anima-CharRef-LLLite)\n- [comfyui-anima-safe-pag](https://github.com/iljung1106/comfyui-anima-safe-pag)\n- [comfyui-anima-style-nodes](https://github.com/fulletLab/comfyui-anima-style-nodes)\n\nThe LLLite model was trained on Anima Base; with Turbo it is experimental."
+        "## Anima Turbo + Character Ref + 3D pose (simple)\n\nColumns from left to right: models → model patches → pose → character → prompt → sampling → output.\n\n**Pose**: load a shaded 3D body mesh rendered on **black** (Pose Studio, Blender, Daz, any 3D posing app,\nor the [sample](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite/blob/main/example_workflow/3dpose_example.png)).\nOpenPose skeletons, depth maps or lineart do not work with this control model.\nThe output size follows the pose image (~1 MP).\n\n**LoRAs**: add your own Anima LoRAs in *LoRAs (Anima)* (empty by default).\n\n**No pose**: select *LLLite 3D pose* and bypass it (Ctrl+B).\n\n**Prompt**: scene and pose tags only; the reference gives the character. Use `1girl` / `1boy`.\n\n**Defaults**: 8 steps euler/simple, CFG 1, REF guidance 1, Safe PAG 1.3. LLLite strength 1, 0 → 1;\nend it earlier (0.6-0.8) if the pose is too rigid.\n\n## Downloads (folders under `ComfyUI/models/`)\n\n- **diffusion_models/** [anima-turbo-v1.0.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/diffusion_models/anima-turbo-v1.0.safetensors)\n  (this workflow loads a local INT8 conversion; pick the file you have)\n- **text_encoders/** [qwen_3_06b_base.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/text_encoders/qwen_3_06b_base.safetensors)\n- **vae/** [qwen_image_vae.safetensors](https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/vae/qwen_image_vae.safetensors)\n- **loras/** [anima_ref_adapter_v2_r64.safetensors](https://huggingface.co/ElectronGirl/anima-ref-adapter/blob/main/anima_ref_adapter_v2_r64.safetensors)\n- **model_patches/** [anima_3dpose_6200.safetensors](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite/blob/main/anima_3dpose_6200.safetensors)\n\n## Custom nodes\n\n- [ComfyUI-Anima-Ref-Adapter](https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter)\n- [ComfyUI-Anima-CharRef-LLLite](https://github.com/quinteroac/ComfyUI-Anima-CharRef-LLLite)\n- [comfyui-anima-safe-pag](https://github.com/iljung1106/comfyui-anima-safe-pag)\n- [comfyui-anima-style-nodes](https://github.com/fulletLab/comfyui-anima-style-nodes)\n- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy) (Power Lora Loader)\n\nThe LLLite model was trained on Anima Base; with Turbo it is experimental."
       ],
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 104,
+      "type": "Power Lora Loader (rgthree)",
+      "title": "LoRAs (Anima)",
+      "pos": [
+        40,
+        470
+      ],
+      "size": [
+        320,
+        150
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "model",
+          "type": "MODEL",
+          "link": 31
+        },
+        {
+          "dir": 3,
+          "name": "clip",
+          "type": "CLIP",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "MODEL",
+          "shape": 3,
+          "type": "MODEL",
+          "links": [
+            1
+          ]
+        },
+        {
+          "dir": 4,
+          "name": "CLIP",
+          "shape": 3,
+          "type": "CLIP",
+          "links": [
+            16,
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "Show Strengths": "Single Strength",
+        "Match": ""
+      },
+      "widgets_values": [
+        {},
+        {
+          "type": "PowerLoraLoaderHeaderWidget"
+        },
+        {},
+        ""
+      ]
     }
   ],
   "links": [
     [
       1,
-      1,
+      104,
       0,
       42,
       0,
@@ -1671,16 +1734,16 @@
     ],
     [
       16,
-      2,
-      0,
+      104,
+      1,
       9,
       0,
       "CLIP"
     ],
     [
       17,
-      2,
-      0,
+      104,
+      1,
       10,
       0,
       "CLIP"
@@ -1788,6 +1851,22 @@
       50,
       0,
       "IMAGE"
+    ],
+    [
+      31,
+      1,
+      0,
+      104,
+      0,
+      "MODEL"
+    ],
+    [
+      32,
+      2,
+      0,
+      104,
+      1,
+      "CLIP"
     ]
   ],
   "groups": [
@@ -1798,7 +1877,7 @@
         20,
         20,
         360,
-        560
+        720
       ],
       "color": "#444",
       "font_size": 24,

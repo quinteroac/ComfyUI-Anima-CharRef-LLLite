@@ -74,7 +74,7 @@ In [`workflows/`](workflows). Each one has a note with every model and custom no
 
 | Workflow | |
 |---|---|
-| `anima_charref_pose_simple.json` | **Start here.** Character reference + 3D pose from a mesh image, core nodes only (no Pixaroma, rgthree or Pose Studio). Load any shaded 3D body render on black, e.g. toyxyz's [sample pose](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite/blob/main/example_workflow/3dpose_example.png) (save it as `input/anima_pose/3dpose_example.png`); the output size follows the pose image. |
+| `anima_charref_pose_simple.json` | **Start here.** Character reference + 3D pose from a mesh image, no Pixaroma or Pose Studio. Load any shaded 3D body render on black, e.g. toyxyz's [sample pose](https://huggingface.co/toyxyz/Anima_ControlNet-LLLite/blob/main/example_workflow/3dpose_example.png) (save it as `input/anima_pose/3dpose_example.png`); the output size follows the pose image. |
 | `anima_charref_posestudio_turbo.json` | Character reference + 3D pose from Pose Studio. Optional pose import (SAM3D) from another image or from the character reference itself, and output size taken from the Pose Studio render. |
 | `anima_charref_posestudio_moss_upscale.json` | The same, plus an optional 2nd pass / hi-res fix with MOSS-Image up to 5 MP. |
 | `anima_charref_regional_paint_turbo.json` | 1 to 3 character references stitched side by side + a regional map painted in Pixaroma Paint. |
@@ -89,7 +89,8 @@ Custom nodes used by the workflows:
 [ComfyUI-Anima-Ref-Adapter](https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter),
 [comfyui-anima-safe-pag](https://github.com/iljung1106/comfyui-anima-safe-pag),
 [comfyui-anima-style-nodes](https://github.com/fulletLab/comfyui-anima-style-nodes),
-[ComfyUI-Pixaroma](https://github.com/pixaroma/ComfyUI-Pixaroma) and [rgthree-comfy](https://github.com/rgthree/rgthree-comfy) (all but the simple workflow),
+[ComfyUI-Pixaroma](https://github.com/pixaroma/ComfyUI-Pixaroma) (all but the simple workflow),
+[rgthree-comfy](https://github.com/rgthree/rgthree-comfy),
 [ComfyUI_VNCCS_Utils](https://github.com/AHEKOT/ComfyUI_VNCCS_Utils) (Pose Studio workflows).
 
 ## Notes
